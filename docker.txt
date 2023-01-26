@@ -1,0 +1,24 @@
+docker --version 
+
+docker pull <image name> -Pull image from docker hub
+
+Ex- docker pull ubuntu
+
+docker images -swhows all images
+docker run -it -d <image name>
+-it - makes the container interactive with the terminal, so we pass commands
+-d  -run as demon -make the cotainer a demon , it should run in the background
+
+docker ps -shows all running containers
+docker stop <container id> -stops running container
+
+docker ps -a -shows all containers (both stoppped and running)
+
+docker exec -it <container_id> bash - to run the particular container
+exit - to come out from the container
+
+docker kill <container_id> - kills the container
+docker rm <container id> - remove the container from the working sysyem
+docker rmi <image-id> - to remove the image from the system
+
+
