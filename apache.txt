@@ -1,0 +1,16 @@
+INSTALLING APACHE into a UBUNTU container
+sudo docker run -it -d ubuntu
+sudo docker exec -it <container-id> bash 
+apt-get update
+apt-get install apache2
+service apache2 start
+service apache2 status
+exit 
+sudo docker ps
+sudo docker commit <container-id> <user-name of docker hub a/c>/<container name(like apache)>   -commiting changes to docker hub
+sudo docker images
+sudo docker run -it -p 82:80 -d <username docker-hub a/c> - to run the container and -p used to map a port
+sudo docker ps
+sudo docker exec -it <container-id> bash
+service apache2 start  -(check port 82 as it is mapped, apache is running or not?)
+
