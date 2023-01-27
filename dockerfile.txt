@@ -1,0 +1,39 @@
+sudo usermod -aG docker $USER - used to reomve sudo and relogin to the server
+Dodckerfile
+
+FROM - used to define the base image, on which we will be building
+ADD <source> <destination in container> - Used to add files to the container 
+being built.
+RUN - used to add layers to the base image, by installing components. Each RUN
+statement, adds a new layer to the docker image.
+CMD - used to run commands onthe start of the container. These commands run only
+when there is no argument specified while running the container.
+ENTRYPOINT - used strictly run commands the moment the container initializes.
+Difference between CMD and ENTRYPOINT - ENTRYPOINT will run irrespective of the fact whether argument is specified or not.
+ENV -used to define environment variables in the container run-time.
+
+mkdir dockerfile
+cd dockerfile
+nano Dockerfile
+FROM ubuntu
+RUN apt-get update
+Run apt-get -y install apache2
+ADD . /var/www/html
+Entrypoint apachectl -D FOREGROUND
+ENV name Intellipaat
+nano 1.html   (Create a html file)
+<html>
+<title>HELLO WORLD</title>
+<body>
+<h1>Hello from a learner</h1>
+</body>
+</html>
+docker build . -t new_dockerfile  (. -build it from the current directory and (-t new_dockerfile  name of the new image))
+docker ps
+docker images - show you the created image
+docker run -it -p 84:80 -d new_dockerfile  -check port 84 , apache will be running and 1.html for the webpage
+echo $name
+
+
+
+
