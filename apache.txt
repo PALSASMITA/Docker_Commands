@@ -14,3 +14,9 @@ sudo docker ps
 sudo docker exec -it <container-id> bash
 service apache2 start  -(check port 82 as it is mapped, apache is running or not?)
 
+Pushing changes to Docker hub , so login to docker hub
+sudo docker login
+username
+password
+sudo docker push <image-name>
+
