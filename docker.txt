@@ -20,5 +20,11 @@ exit - to come out from the container
 docker kill <container_id> - kills the container
 docker rm <container id> - remove the container from the working sysyem
 docker rmi <image-id> - to remove the image from the system
-
+docker run -ti -d <image name> - download and run the image
+docker rm -f <container-id> - to remove running container use (-f) the container
+docker exec -it  <container-id> bash -go into the container
+docker commit <container-id> <new image name> -save changes to the container , so give a new name . 
+It would be a new docker image. This is how you can creat your custom container.
+You can install required software for later use. This is how you save changes to a container
+docker rm -f $(sudo docker ps -a -q) - remove all docker containers 
 
