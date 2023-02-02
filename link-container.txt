@@ -1,0 +1,7 @@
+Linking Docker Containers
+1. Create 2 containers of Ubuntu with names as follows: container1, container2
+2. Link container2 to container1
+3. Try Pinging from container2 to container1 using command "ping container1"
+Sy- docker run -it --link<name-of-container> -d <image-name>
+Ex-docker run -it --name container1 -d ubntu
+docker run -it --name container2 --link container1 -d ubuntu

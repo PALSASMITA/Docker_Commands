@@ -1,0 +1,14 @@
+Cointainer Orchestration
+Applications are typically made up of individually containerized components( called microservices)
+that must be organized at the networking level inorder for the application to run as intended. T he process of organizing multiple containers in this manner is known as container orchestration
+
+Docker Swarm is a clustering and scheduling tool for Docker containers. With Swarm, IT administrators and developers can establish and manage a cluster of Docker nodes as a single virtual system.
+ CREATING A DOCKER SWARM CLUSTER
+ON The Master Master
+docker swarm init --advertise-addr=<ip-address-of leader/master
+On THE DOCKER NODE
+sudo apt-get install docker.io
+sudo docker swarm join --token  <from the master get the joining token>
+ON THE MASTER 
+docker node ls <to check connected node/s>
+

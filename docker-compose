@@ -1,0 +1,25 @@
+Compose is a tool for defining and running multi-container Docker applications.
+With Compose, use a YAML file to configure your application's service. Then, with a single command, you create and start all the services from your configuration. Run docker-compose up and compose starts and runs your entire app.
+sy - sudo curl -L "https://github.com/docker/compose/releases/download/1.23.2/docker-compose-$(uname -s)-$(uname -m)" -o /user/local/bin/docker-compose
+sudo chmod +x /user/local/bin/docker-compose
+docker-compose --version
+ 1. Create a folder called "docker"
+2. Write the sample YAML file in "docker-compose.yml"file
+3. Docker-compose file syntax
+   docker-compose up -d
+
+nano docker-compose.yml
+      
+version: '3'
+  services:
+    sample1:
+	  image: httpd
+	  ports:
+	    -"80:80"
+		
+	sample2:
+      image: 'nginx'
+
+docker-compose up -d - run docker files
+docker ps
+docker-compose down  - removes/deletes docker files

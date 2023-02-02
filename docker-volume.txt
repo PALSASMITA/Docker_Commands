@@ -1,0 +1,21 @@
+Docker Volume and Bind Mounts
+Docker Volume is a mountable entity which can be used to store data, in the docker filesystem
+docker volume create <volum-name>
+Example- docker run -it --mount source=demo-vol,destination=/app -d ubuntu
+docker ps 
+docker exec -it <container-id> bash
+cd app
+ls 
+echo "Hello world" > hello.txt
+exit 
+docker ps 
+BIND MOUNTS
+Bind Mounts mount a directory of the host machine to the docker container
+Sy- docker run -it -v <source-directroy>:<destination-diectory> -d
+mkdir dir1
+cd dir1
+nano 1.txt
+cd
+docker run -it -v /home/ubuntu/mount:/demo -d ubuntu
+
+
